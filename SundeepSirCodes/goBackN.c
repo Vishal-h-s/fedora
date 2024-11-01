@@ -1,4 +1,5 @@
 #include<stdio.h>
+
 int main(){
 	int n,f,frames[30],i;
 	printf("Enter window size : ");
