@@ -1,17 +1,37 @@
 /*Develop a simple data link layer that performs the flow control using the Go Back N protocol in   “c”
 
-Sample
+Sample Output:-
+
+Starting Go-Back-N Protocol Simulation...
+
+Sender: Sending Frame 0
+Receiver: Frame 0 received
+Sender: Sending Frame 1
+Receiver: Frame 1 lost (simulated)
+Sender: Sending Frame 2
+Receiver: Frame 2 received
+Sender: Sending Frame 3
+Receiver: Frame 3 received
+Sender: Acknowledgment received for Frame 0
+Sender: No new acknowledgment, resending frames from 1
+Sender: Sending Frame 1
+Receiver: Frame 1 received
+Sender: Acknowledgment received for Frame 3
+...
+Simulation complete.
+
 
 */
 #include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
-#include <unistd.h>
-#include <time.h>
+#include <stdbool.h> // for using bool datatype
+#include <stdlib.h> // for srand()
+#include <unistd.h> // for usleep(time in microseconds) => Suspends the program till that time
+#include <time.h> // for time(time_t *t) , it returns the current calender time , by passing 0 or NULL returns current time as Integer
 
 #define WINDOW_SIZE 4      
 #define TOTAL_FRAMES 10    
 
+// declare the sender and receiver functions 
 void sender();
 void receiver(int frame);
 
