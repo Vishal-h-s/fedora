@@ -93,6 +93,7 @@ int main(){
 
     crc(transmitted, generator, crcCode);
 
+    // Note :- Be careful to replace the zeros String for varying inputs , or write a seperate zeroGeneratingFunc to generate 0s of lenght = genLen - 1
     if (strcmp(crcCode, "0000") == 0)
         printf("No error detected\n");
     else
