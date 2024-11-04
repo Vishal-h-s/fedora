@@ -24,6 +24,16 @@ Acknowledgement of above frames sent is received by sender
 */
 
 #include<stdio.h>
+
+void sendFrames(int k,int noOfFrames,int frames[]){
+    for(int i = 0 ; i < noOfFrames ; i+=k){
+        for(int j = i ; j < i + k; j++){
+            if(j < noOfFrames) printf("%d ",frames[j]);
+        }
+        printf("\nAcknowledgement of above frames sent is received by sender\n\n");                      
+        
+    }
+}
 int main(){
     int k; // window size
     printf("Enter window size : ");
@@ -44,12 +54,6 @@ int main(){
     
     printf("\nAfter sending %d frames at each stage sender waits for acknowledgement sent by the receiver\n\n",k);
     
-    for(int i = 0 ; i < noOfFrames ; i+=k){
-        for(int j = i ; j < i + k; j++){
-            if(j < noOfFrames) printf("%d ",frames[j]);
-        }
-        printf("\nAcknowledgement of above frames sent is received by sender\n\n");                      
-        
-    }
+    sendFrames(k,noOfFrames,frames);
     
 }
