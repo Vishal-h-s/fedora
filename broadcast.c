@@ -24,11 +24,11 @@ First Host: 192.168.1.129
 Last Host: 192.168.1.254
 
 */
-#include<stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-    // Function to convert an IP address to a 32-bit integer
-    unsigned int ipToInt(char *ip)
+// Function to convert an IP address to a 32-bit integer
+unsigned int ipToInt(char *ip)
 {
     unsigned int a, b, c, d;
     sscanf(ip, "%u.%u.%u.%u", &a, &b, &c, &d);
@@ -64,10 +64,10 @@ int main()
     newSubnetMask = calculateSubnetMask(newPrefixLength);
     // Calculate the number of hosts per subnet
     int hostsPerSubnet = (1 << (32 - newPrefixLength)) - 2; // subtract 2 for network and broadcast addresses
-    printf("\nNumber of subnets: 2\n");
+        printf("\nNumber of subnets: 2\n");
     printf("Number of hosts per subnet: %d\n", hostsPerSubnet);
     // Generate subnets
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < 2; i++)
     {
         unsigned int subnetNetwork = (ipInt & subnetMask) | (i << (32 -
                                                                    newPrefixLength));
