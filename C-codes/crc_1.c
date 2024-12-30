@@ -13,100 +13,101 @@ No error detected
 
 
 */
-#include <stdio.h>
-#include <string.h>
+// Method-1
+// #include <stdio.h>
+// #include <string.h>
 
-void xorOperation(char dividend[], char generator[], int n) {
-
-
-    for (int i = 0; i < n; i++) {
+// void xorOperation(char dividend[], char generator[], int n) {
 
 
-        if (dividend[i] == generator[i])
-            dividend[i] = '0';
-        else
-            dividend[i] = '1';
+//     for (int i = 0; i < n; i++) {
+
+
+//         if (dividend[i] == generator[i])
+//             dividend[i] = '0';
+//         else
+//             dividend[i] = '1';
             
         
-    }
+//     }
 
-}
+// }
 
-void crc(char data[], char generator[], char crcCode[]) 
+// void crc(char data[], char generator[], char crcCode[]) 
 
-{
+// {
 
-    int dataLen = strlen(data);
-    int genLen = strlen(generator);
-    char temp[128];
-    strcpy(temp, data);
-    for (int i = dataLen; i < dataLen + genLen - 1; i++) {
-        temp[i] = '0';
-     }
-    temp[dataLen + genLen - 1] = '\0'; // representing EOS
-    char dividend[128];
-    strncpy(dividend, temp, genLen);
+//     int dataLen = strlen(data);
+//     int genLen = strlen(generator);
+//     char temp[128];
+//     strcpy(temp, data);
+//     for (int i = dataLen; i < dataLen + genLen - 1; i++) {
+//         temp[i] = '0';
+//      }
+//     temp[dataLen + genLen - 1] = '\0'; // representing EOS
+//     char dividend[128];
+//     strncpy(dividend, temp, genLen);
 
-    for (int i = 0; i < dataLen; i++) {
+//     for (int i = 0; i < dataLen; i++) {
 
 
-        if (dividend[0] == '1'){
-        xorOperation(dividend, generator, genLen);
-        }
-        for (int j = 0; j < genLen - 1; j++){
+//         if (dividend[0] == '1'){
+//         xorOperation(dividend, generator, genLen);
+//         }
+//         for (int j = 0; j < genLen - 1; j++){
 
-            dividend[j] = dividend[j + 1];
-        }
-        dividend[genLen - 1] = temp[i + genLen];
+//             dividend[j] = dividend[j + 1];
+//         }
+//         dividend[genLen - 1] = temp[i + genLen];
     
 
-    }
+//     }
 
-    strncpy(crcCode, dividend, genLen - 1);
-    crcCode[genLen - 1] = '\0';
+//     strncpy(crcCode, dividend, genLen - 1);
+//     crcCode[genLen - 1] = '\0';
 
-}
+// }
 
-int main(){
-    char data[128], generator[128], crcCode[128], transmitted[128];
+// int main(){
+//     char data[128], generator[128], crcCode[128], transmitted[128];
     
-    printf("Enter data to be transmitted: ");
-    scanf("%s", data);
+//     printf("Enter data to be transmitted: ");
+//     scanf("%s", data);
     
-    printf("Enter the Generating polynomial: ");
-    scanf("%s", generator);
+//     printf("Enter the Generating polynomial: ");
+//     scanf("%s", generator);
 
-    printf("Data padded with n-1 zeros : ");
-    crc(data, generator, crcCode);
-    printf("%s%s", data, crcCode);
+//     printf("Data padded with n-1 zeros : ");
+//     crc(data, generator, crcCode);
+//     printf("%s%s", data, crcCode);
     
-    printf("CRC or Check value is : %s", crcCode);
+//     printf("CRC or Check value is : %s", crcCode);
 
-    strcpy(transmitted, data);
-    strcat(transmitted, crcCode);
-    printf("Final data \nto be sent : %s", transmitted);
+//     strcpy(transmitted, data);
+//     strcat(transmitted, crcCode);
+//     printf("Final data \nto be sent : %s", transmitted);
 
-    printf("Enter the received data: ");
-    scanf("%s", transmitted);
+//     printf("Enter the received data: ");
+//     scanf("%s", transmitted);
 
-    printf("Data received: %s", transmitted);
+//     printf("Data received: %s", transmitted);
 
-    crc(transmitted, generator, crcCode);
+//     crc(transmitted, generator, crcCode);
 
-    // Note :- Be careful to replace the zeros String for varying inputs , or write a seperate zeroGeneratingFunc to generate 0s of lenght = genLen - 1
-    if (strcmp(crcCode, "0000") == 0)
-        printf("No error detected\n");
-    else
-        printf("Error detected\n");
+//     // Note :- Be careful to replace the zeros String for varying inputs , or write a seperate zeroGeneratingFunc to generate 0s of lenght = genLen - 1
+//     if (strcmp(crcCode, "0000") == 0)
+//         printf("No error detected\n");
+//     else
+//         printf("Error detected\n");
 
-    return 0;
+//     return 0;
 
-}
+// }
 
 
 // Method-2 , much more Modular 
 
-/*
+
 
 #include <stdio.h>
 #include <string.h>
@@ -221,4 +222,3 @@ int main() {
 
     return 0;
 }
-*/
