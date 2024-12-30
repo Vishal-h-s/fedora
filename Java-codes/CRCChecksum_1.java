@@ -1,8 +1,5 @@
-/*
-1) Write a program to compute CRC code for the polynomials CRC-12, CRC-16 and CRC CCIP
+// 1) Write a program to compute CRC code for the polynomials CRC-12, CRC-16 and CRC CCIP
 
-
- */
 
 import java.util.Scanner;
 
@@ -42,14 +39,14 @@ public class CRCChecksum_1 {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.print("Enter data to be transmitted: ");
-        String data = scanner.next();
+        String data = sc.next();
         System.out.print("Enter the generator polynomial: ");
-        String generator = scanner.next();
+        String generator = sc.next();
         sender(data, generator);
         System.out.print("Enter the received data: ");
-        receiver(scanner.next(), generator);
-        scanner.close();
+        receiver(sc.next(), generator);
+        sc.close();
     }
 }

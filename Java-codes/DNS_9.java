@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 class DNS_9 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("Enter a domain name :");
-        String domain = scanner.nextLine();
+        String domain = sc.nextLine();
         try {
             InetAddress[] addresses = InetAddress.getAllByName(domain);
             System.out.println("IP addresses for " + domain + ":");
@@ -16,6 +16,6 @@ class DNS_9 {
         } catch (UnknownHostException e) {
             System.out.println("Could not resolve domain: " + e.getMessage());
         }
-        scanner.close();
+        sc.close();
     }
 }

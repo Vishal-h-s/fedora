@@ -1,6 +1,5 @@
-/*
-3) Take an example subnet of hosts and obtain a broadcast tree for the subnet.
-*/
+// 3) Take an example subnet of hosts and obtain a broadcast tree for the subnet.
+
     
 import java.util.Scanner;
 
@@ -31,13 +30,13 @@ class BroadcastTree_3 {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter IP address (e.g., 192.168.1.0): ");
-        String ip = scanner.next();
+        String ip = sc.next();
 
         System.out.print("Enter current prefix length (e.g., 24): ");
-        int prefixLength = scanner.nextInt();
+        int prefixLength = sc.nextInt();
 
         // New prefix length for creating two subnets
         int newPrefixLength = prefixLength + 1;
@@ -69,6 +68,6 @@ class BroadcastTree_3 {
             System.out.println("Last Host: " + intToIp(lastHost));
         }
 
-        scanner.close();
+        sc.close();
     }
 }
