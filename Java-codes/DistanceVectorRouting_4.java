@@ -20,7 +20,7 @@ public class DistanceVectorRouting_4 {
         }
     }
 
-    static void distanceVectorRouting(int n, int[][] costMat, int[][] distanceVec, int[][] nextHop) {
+    static void distanceVectorRouting(int n, int[][] distanceVec, int[][] nextHop) {
         boolean updated;
         do {
             updated = false;
@@ -63,7 +63,7 @@ public class DistanceVectorRouting_4 {
             }
         }
 
-        distanceVectorRouting(n, costMat, distanceVec, nextHop);
+        distanceVectorRouting(n, distanceVec, nextHop);
         printRoutingTable(n, distanceVec, nextHop);
 
         sc.close();
