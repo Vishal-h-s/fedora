@@ -71,3 +71,26 @@ class BroadcastTree_3 {
         sc.close();
     }
 }
+
+/*
+Output:-
+Enter IP address (e.g., 192.168.1.0): 192.168.1.0
+Enter current prefix length (e.g., 24): 24
+
+Number of subnets: 2
+Number of hosts per subnet: 126
+
+Subnet 1:
+Network Address: 192.168.1.0
+Broadcast Address: 192.168.1.127
+Subnet Mask: 255.255.255.128
+First Host: 192.168.1.1
+Last Host: 192.168.1.126
+
+Subnet 2:
+Network Address: 192.168.1.128
+Broadcast Address: 192.168.1.255
+Subnet Mask: 255.255.255.128
+First Host: 192.168.1.129
+Last Host: 192.168.1.254
+ */

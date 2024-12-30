@@ -26,3 +26,13 @@ class Ping_10 {
         }
     }
 }
+
+/*
+Output:- 
+javac Ping_10.java 
+viishhnu@fedora:~/Backup/SEM-5/KMIT LABS/CN lab/Java-codes$ sudo java Ping_10 www.facebook.com
+[sudo] password for viishhnu: 
+Pinging www.facebook.com...
+Host www.facebook.com is reachable.
+IP Address: 163.70.140.35
+ */

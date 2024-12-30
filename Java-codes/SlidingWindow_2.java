@@ -61,3 +61,50 @@ class SlidingWindow_2 {
         }
     }
 }
+
+/*
+Output:-
+
+[Sender] Starting Sliding Window Protocol with Go-Back-N.
+[Sender] Sending Frame 0
+[Receiver] Frame 0 lost during transmission.
+[Sender] Sending Frame 1
+[Receiver] Frame 1 discarded.
+[Sender] Sending Frame 2
+[Receiver] Frame 2 lost during transmission.
+[Sender] Sending Frame 3
+[Receiver] Frame 3 discarded.
+[Sender] ACK for Frame -1 received successfully.
+[Sender] No new acknowledgment, resending frames from 0
+[Sender] Sending Frame 0
+[Receiver] Frame 0 received.
+[Sender] Sending Frame 1
+[Receiver] Frame 1 lost during transmission.
+[Sender] Sending Frame 2
+[Receiver] Frame 2 discarded.
+[Sender] Sending Frame 3
+[Receiver] Frame 3 discarded.
+[Sender] ACK for Frame 0 received successfully.
+[Sender] Sending Frame 1
+[Receiver] Frame 1 received.
+[Sender] Sending Frame 2
+[Receiver] Frame 2 received.
+[Sender] Sending Frame 3
+[Receiver] Frame 3 received.
+[Sender] Sending Frame 4
+[Receiver] Frame 4 received.
+[Sender] ACK for Frame 4 received successfully.
+[Sender] Sending Frame 5
+[Receiver] Frame 5 received.
+[Sender] Sending Frame 6
+[Receiver] Frame 6 received.
+[Sender] Sending Frame 7
+[Receiver] Frame 7 received.
+[Sender] Sending Frame 8
+[Receiver] Frame 8 received.
+[Sender] ACK for Frame 8 received successfully.
+[Sender] Sending Frame 9
+[Receiver] Frame 9 received.
+[Sender] ACK for Frame 9 received successfully.
+[Sender] Transmission completed
+ */
