@@ -1,6 +1,4 @@
 // 1) Write a program to compute CRC code for the polynomials CRC-12, CRC-16 and CRC CCIP
-
-
 import java.util.Scanner;
 
 public class CRCCheckSum_1 {
@@ -17,7 +15,7 @@ public class CRCCheckSum_1 {
     // Calculate CRC
     static String computeCRC(String data, String generator) {
         int genLen = generator.length();
-        String dividend = data + "0".repeat(genLen - 1);
+        String dividend = data + "0".repeat(genLen - 1); // this divided is called as code word
         
         for (int i = 0; i <= dividend.length() - genLen; i++) {
             if (dividend.charAt(i) == '1') {

@@ -2,7 +2,7 @@
 import java.util.Scanner;
 
 public class DistanceVectorRouting_4 {
-    static final int INF = 9999;
+    private static final int INF = 9999;
 
     // Function to print the routing table for each node
     static void printRoutingTable(int numNodes, int[][] distVector, int[][] nextHop) {
