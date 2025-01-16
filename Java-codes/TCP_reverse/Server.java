@@ -12,12 +12,14 @@ public class Server {
                 Socket socket = serverSocket.accept();
                 System.out.println("New client connected");
                 // Create input and output streams for communication
-                InputStream input = socket.getInputStream();
-                BufferedReader reader = new BufferedReader(new InputStreamReader(input));
                 OutputStream output = socket.getOutputStream();
                 PrintWriter writer = new PrintWriter(output, true);
-                String text;
-                while ((text = reader.readLine()) != null) {
+                InputStream input = socket.getInputStream();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+                String text; // this is what we are getting from client 
+                while (true) {
+                    text = reader.readLine();
+                    if(text == null) break;
                     System.out.println("Received: " + text);
                     // Reverse the string
                     String reversedText = new StringBuilder(text).reverse().toString();
@@ -29,7 +31,6 @@ public class Server {
             }
         } catch (IOException ex) {
             System.out.println("Server exception: " + ex.getMessage());
-            ex.printStackTrace();
         }
     }
 }
