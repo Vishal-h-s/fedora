@@ -11,7 +11,7 @@ class SlidingWindow_2 {
 
     private static int nextFrameToReceive = 0;
     private static int nextFrameToSend = 0;
-    private static int ackReceived = -1;
+    private static int ackReceived = -1; 
     private static boolean[] frameAcknowledged = new boolean[TOTAL_FRAMES];
 
     public static void main(String[] args) {
